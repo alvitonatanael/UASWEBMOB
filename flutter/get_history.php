@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $stmt->close();
 
         if ($id) {
-            // Query untuk mendapatkan keranjang berdasarkan ID pengguna
+            // Query untuk mendapatkan riwayat berdasarkan ID pengguna
             $query = "SELECT * FROM history WHERE id_pengguna = ?";
             $stmt2 = $connect->prepare($query);
             $stmt2->bind_param("i", $id);
