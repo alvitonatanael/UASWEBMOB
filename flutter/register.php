@@ -32,6 +32,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
    
     $stmt = $connect->prepare("INSERT INTO users (id, email, password, nama, alamat, telepon, foto) VALUES (?,?,?,?,?,?,?)");
     $stmt->bind_param("sssssss",$id,$email,$password,$nama,$alamat,$telepon,$foto);
+    $stmt->execute();
     $response["success"] = true;
     $response["nama"] =  $nama;
     echo json_encode($response);
